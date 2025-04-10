@@ -1,0 +1,51 @@
+body {
+    border: 1px solid #2008f7;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+}
+
+
+.header {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 20px; 
+}
+
+h1 {
+    margin: 0; 
+}
+
+button {
+    font-style: italic;
+    color: #fc04d2;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: 4px solid #fc04d2;
+    border-radius: 50px; 
+    background-color: #050505;
+}
+
+
+
+button:hover {
+    color: #050505;
+    background-color: #cac4fd;
+    cursor: pointer;
+}
+
+
+#editImagePreview {
+    display: block;
+    max-height: 150px;
+    width: auto;
+    border-radius: 8px;
+}
+
+.custom-modal-header {
+    color: #050505; 
+    background-color: #0429fc; 
+}
+
+
