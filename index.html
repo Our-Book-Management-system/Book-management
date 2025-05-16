@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Book Management System</title>
+    <link rel="stylesheet" href="./index.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body style="background-color: rgb(10, 10, 10); border: 3px solid #fc04d2; border-radius: 10px; padding: 20px; margin: 20px;">
+
+<!-- Navbar -->
+<nav class="navbar px-3 border border-dark rounded-3" style="background-color: #fc04d2;">
+    <a class="navbar-brand text-white fw-bold" href="#" style="font-size: 40px;">🧮 Book Management System</a>
+    <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#addBookModal">+ Add Book</button>
+</nav>
+
+<!-- Search Bar -->
+<div class="d-flex justify-content-center mt-3">
+    <input class="form-control w-25" id="searchInput" type="text" placeholder="Search books by Title or Author...">
+</div>
+
+<!-- Tabs -->
+<ul class="nav nav-tabs" id="bookTabs">
+    <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#allBooks">🎀All Books</a></li>
+    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#favorites">💛Favorites</a></li>
+    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#unread">👎Unread</a></li>
+    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#read">👁‍🗨Read</a></li>
+</ul>
+
+<!-- Tab Content -->
+<div class="tab-content mt-3">
+  <div id="allBooks" class="tab-pane fade show active">
+      <div class="row" id="bookList"></div>
+  </div>
+  <div id="favorites" class="tab-pane fade">
+      <div class="row" id="favoriteList"></div>
+  </div>
+  <div id="unread" class="tab-pane fade">
+      <div class="row" id="unreadList"></div>
+  </div>
+  <div id="read" class="tab-pane fade">
+      <div class="row" id="readList"></div>
+  </div>
+</div>
+
+<!-- Books Container (Dynamically Generated) -->
+<div class="container mt-4">
+    <div class="row d-flex flex-wrap justify-content-start" id="bookList">
+        <!-- Books will be inserted here dynamically -->
+    </div>
+</div>
+
+<!-- Add/Edit Book Modal -->
+<div class="modal fade" id="addBookModal">
+    <div class="modal-dialog" >
+        <div class="modal-content">
+             <div class="modal-header custom-modal-header">
+                    <h5 class="modal-title">+ Add Book</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+            <div class="modal-body">
+                <form id="bookForm" style="background-color: #fc04d2; padding: 20px; border: 1px solid #5006ff;
+                       border-radius: 20px;">
+                    <div class="mb-2">
+                        <label>Title</label>
+                        <input type="text" id="title" class="form-control" required>
+                    </div>
+                    <div class="mb-2">
+                        <label>Author</label>
+                        <input type="text" id="author" class="form-control" required>
+                    </div>
+                    <div class="mb-2">
+                        <label>Genre</label>
+                        <input type="text" id="genre" class="form-control" required>
+                    </div>
+                    <div class="mb-2">
+                        <label>Status</label>
+                        <select id="status" class="form-control">
+                            <option value="Unread">Unread</option>
+                            <option value="Read">Read</option>
+                        </select>
+                    </div>
+                    <div class="mb-2">
+                        <label>Upload Book Cover Image</label>
+                        <input type="file" id="image" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Link to next page -->
+<a href="./pages/nextpage.html">
+    <button>Go to Next Page</button>
+</a>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JavaScript File (Fixed) -->
+<script src="./index.js" defer></script>
+
+</body>
+</html>
+
